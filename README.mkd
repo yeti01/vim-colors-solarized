@@ -112,7 +112,10 @@ Solarized download available from [Solarized homepage]. If you use
 Solarized *without* these colors, Solarized will need to be told to degrade its
 colorscheme to a set compatible with the limited 256 terminal palette (whereas 
 by using the terminal's 16 ansi color values, you can set the correct, specific 
-values for the Solarized palette).
+values for the Solarized palette). To use the custom 16 Solarized colors, add 
+the following line *before* the `colorscheme solarized` line:
+
+    set t_Co=16
 
 If you do use the custom terminal colors, solarized.vim should work out of the
 box for you. If you are using a terminal emulator that supports 256 colors and 
@@ -120,7 +123,7 @@ don't want to use the custom Solarized terminal colors, you will need to use
 the degraded 256 colorscheme. To do so, simply add the following line *before* 
 the `colorscheme solarized` line:
 
-    let g:solarized_termcolors=256
+    set t_Co=256
 
 Again, I recommend just changing your terminal colors to Solarized values 
 either manually or via one of the many terminal schemes available for import.
@@ -135,7 +138,6 @@ Set these in your vimrc file prior to calling the colorscheme.
 
     option name               default     optional
     ------------------------------------------------
-    g:solarized_termcolors=   16      |   256
     g:solarized_termtrans =   0       |   1
     g:solarized_degrade   =   0       |   1
     g:solarized_bold      =   1       |   0
@@ -146,14 +148,6 @@ Set these in your vimrc file prior to calling the colorscheme.
     ------------------------------------------------
 
 ### Option Details
-
-*   g:solarized_termcolors
-
-    This is set to *16* by default, meaning that Solarized will attempt to use 
-    the standard 16 colors of your terminal emulator. You will need to set 
-    those colors to the correct Solarized values either manually or by 
-    importing one of the many colorscheme available for popular terminal 
-    emulators and Xresources.
 
 *   g:solarized_termtrans
 

@@ -88,7 +88,11 @@
 " Solarized *without* these colors, Solarized will need to be told to degrade
 " its colorscheme to a set compatible with the limited 256 terminal palette 
 " (whereas by using the terminal's 16 ansi color values, you can set the 
-" correct, specific values for the Solarized palette).
+" correct, specific values for the Solarized palette). To use the custom 16
+" Solarized colors, add the following line *before* the `colorscheme solarized`
+" line:
+"
+"     set t_Co=16
 " 
 " If you do use the custom terminal colors, solarized.vim should work out of 
 " the box for you. If you are using a terminal emulator that supports 256 
@@ -96,7 +100,7 @@
 " need to use the degraded 256 colorscheme. To do so, simply add the following 
 " line *before* the `colorscheme solarized` line:
 " 
-"     let g:solarized_termcolors=256
+"     set t_Co=256
 " 
 " Again, I recommend just changing your terminal colors to Solarized values 
 " either manually or via one of the many terminal schemes available for import.
@@ -109,7 +113,6 @@
 "
 " option name               default     optional
 " ------------------------------------------------
-" g:solarized_termcolors=   16      |   256
 " g:solarized_termtrans =   0       |   1
 " g:solarized_degrade   =   0       |   1
 " g:solarized_bold      =   1       |   0
@@ -120,25 +123,6 @@
 " ------------------------------------------------
 "
 " OPTION DETAILS
-"
-" ------------------------------------------------
-" g:solarized_termcolors=   256     |   16
-" ------------------------------------------------
-" The most important option if you are using vim in terminal (non gui) mode!
-" This tells Solarized to use the 256 degraded color mode if running in a 256
-" color capable terminal.  Otherwise, if set to `16` it will use the terminal
-" emulators colorscheme (best option as long as you've set the emulators colors
-" to the Solarized palette).
-"
-" If you are going to use Solarized in Terminal mode (i.e. not in a GUI
-" version like gvim or macvim), **please please please** consider setting your
-" terminal emulator's colorscheme to used the Solarized palette. I've included
-" palettes for some popular terminal emulator as well as Xdefaults in the
-" official Solarized download available from:
-" http://ethanschoonover.com/solarized . If you use Solarized without these
-" colors, Solarized will by default use an approximate set of 256 colors.  It
-" isn't bad looking and has been extensively tweaked, but it's still not quite
-" the real thing.
 "
 " ------------------------------------------------
 " g:solarized_termtrans =   0       |   1
@@ -250,9 +234,6 @@ endif
 if !exists("g:solarized_italic")
     let g:solarized_italic = 1
 endif
-if !exists("g:solarized_termcolors")
-    let g:solarized_termcolors = 16
-endif
 if !exists("g:solarized_contrast")
     let g:solarized_contrast = "normal"
 endif
@@ -316,7 +297,7 @@ elseif (has("gui_running") && g:solarized_degrade == 1)
     let s:blue        = "#0087ff"
     let s:cyan        = "#00afaf"
     let s:green       = "#5f8700"
-elseif g:solarized_termcolors != 256 && &t_Co >= 16
+elseif &t_Co == 16
     let s:vmode       = "cterm"
     let s:base03      = "8"
     let s:base02      = "0"
@@ -334,7 +315,7 @@ elseif g:solarized_termcolors != 256 && &t_Co >= 16
     let s:blue        = "4"
     let s:cyan        = "6"
     let s:green       = "2"
-elseif g:solarized_termcolors == 256
+elseif &t_Co == 256
     let s:vmode       = "cterm"
     let s:base03      = "234"
     let s:base02      = "235"
