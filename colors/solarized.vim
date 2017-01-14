@@ -197,11 +197,11 @@
 " --------- ------- ---- -------  ----------- ---------- ----------- -----------
 " base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
 " base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
-" base01    #586e75 10/7 brgreen  240 #4e4e4e 45 -07 -07  88 110 117 194  25  46
-" base00    #657b83 11/7 bryellow 241 #585858 50 -07 -07 101 123 131 195  23  51
+" base01    #586e75 10/7 brgreen  239 #4e4e4e 45 -07 -07  88 110 117 194  25  46
+" base00    #657b83 11/7 bryellow 240 #585858 50 -07 -07 101 123 131 195  23  51
 " base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
 " base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-" base2     #eee8d5  7/7 white    254 #d7d7af 92 -00  10 238 232 213  44  11  93
+" base2     #eee8d5  7/7 white    187 #d7d7af 92 -00  10 238 232 213  44  11  93
 " base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
 " yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
 " orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
@@ -310,7 +310,7 @@ elseif (has("gui_running") && g:solarized_degrade == 1)
     let s:base3       = "#ffffd7"
     let s:yellow      = "#af8700"
     let s:orange      = "#d75f00"
-    let s:red         = "#af0000"
+    let s:red         = "#d70000"
     let s:magenta     = "#af005f"
     let s:violet      = "#5f5faf"
     let s:blue        = "#0087ff"
@@ -346,7 +346,7 @@ elseif g:solarized_termcolors == 256
     let s:base3       = "230"
     let s:yellow      = "136"
     let s:orange      = "166"
-    let s:red         = "124"
+    let s:red         = "160"
     let s:magenta     = "125"
     let s:violet      = "61"
     let s:blue        = "33"
