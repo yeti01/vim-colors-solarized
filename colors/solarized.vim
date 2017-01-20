@@ -216,11 +216,7 @@
 " Default option values"{{{
 " ---------------------------------------------------------------------
 if !exists("g:solarized_termtrans")
-    if ($TERM_PROGRAM ==? "apple_terminal" && &t_Co < 256)
-        let g:solarized_termtrans = 1
-    else
-        let g:solarized_termtrans = 0
-    endif
+    let g:solarized_termtrans = 0
 endif
 if !exists("g:solarized_degrade")
     let g:solarized_degrade = 0
