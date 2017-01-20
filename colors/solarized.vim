@@ -358,7 +358,6 @@ endif
 " ---------------------------------------------------------------------
     let s:none            = "NONE"
     let s:c               = ",undercurl"
-    let s:r               = ",reverse"
     let s:s               = ",standout"
     let s:ou              = ""
 "}}}
@@ -427,7 +426,7 @@ endif
 " Highlighting primitives"{{{
 " ---------------------------------------------------------------------
 
-exe "let s:bg_none      = ' ".s:vmode."bg=".s:none   ."'"
+exe "let s:bg_none      = ' ".s:vmode."bg=".s:back   ."'"
 exe "let s:bg_back      = ' ".s:vmode."bg=".s:back   ."'"
 exe "let s:bg_base03    = ' ".s:vmode."bg=".s:base03 ."'"
 exe "let s:bg_base02    = ' ".s:vmode."bg=".s:base02 ."'"
@@ -472,7 +471,6 @@ exe "let s:fmt_undb     = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
 exe "let s:fmt_uopt     = ' ".s:vmode."=NONE".s:ou.     " term=NONE".s:ou."'"
 exe "let s:fmt_curl     = ' ".s:vmode."=NONE".s:c.      " term=NONE".s:c."'"
 exe "let s:fmt_ital     = ' ".s:vmode."=NONE".s:i.      " term=NONE".s:i."'"
-exe "let s:fmt_revr     = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r."'"
 exe "let s:fmt_stnd     = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s."'"
 
 if has("gui_running")
@@ -585,7 +583,7 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
 if      (g:solarized_visibility=="high")
-    exe "hi! SpecialKey"     .s:fmt_revr   .s:fg_red    .s:bg_none
+    exe "hi! SpecialKey"     .s:fmt_none   .s:fg_back   .s:bg_red
     exe "hi! NonText"        .s:fmt_bold   .s:fg_base1  .s:bg_none
 elseif  (g:solarized_visibility=="low")
     exe "hi! SpecialKey"     .s:fmt_bold   .s:fg_base02 .s:bg_none
@@ -605,9 +603,9 @@ else
     exe "hi! Visual"         .s:fmt_none   .s:fg_none   .s:bg_base2
 endif
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
+exe "hi! ErrorMsg"       .s:fmt_none   .s:fg_back   .s:bg_red
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
-exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
+exe "hi! Search"         .s:fmt_none   .s:fg_back   .s:bg_yellow
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
@@ -619,10 +617,10 @@ exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! WildMenu"       .s:fmt_none   .s:fg_base2  .s:bg_base02
 exe "hi! Folded"         .s:fmt_undb   .s:fg_base0  .s:bg_base02  .s:sp_base03
 exe "hi! FoldColumn"     .s:fmt_bold   .s:fg_base0  .s:bg_base02
-exe "hi! DiffAdd"        .s:fmt_revr   .s:fg_green  .s:bg_none
-exe "hi! DiffChange"     .s:fmt_revr   .s:fg_yellow .s:bg_none
-exe "hi! DiffDelete"     .s:fmt_revr   .s:fg_red    .s:bg_none
-exe "hi! DiffText"       .s:fmt_revr   .s:fg_blue   .s:bg_none
+exe "hi! DiffAdd"        .s:fmt_none   .s:fg_back   .s:bg_green
+exe "hi! DiffChange"     .s:fmt_none   .s:fg_back   .s:bg_yellow
+exe "hi! DiffDelete"     .s:fmt_none   .s:fg_back   .s:bg_red
+exe "hi! DiffText"       .s:fmt_none   .s:fg_back   .s:bg_blue
 exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! SpellBad"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_red
