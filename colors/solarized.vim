@@ -192,7 +192,7 @@
 " red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
 " magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
 " violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-" blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
+" blue      #268bd2  4/4 blue      32 #0087d7 55 -10 -45  38 139 210 205  82  82
 " cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 " green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 "
@@ -290,7 +290,7 @@ elseif (has("gui_running") && g:solarized_degrade == 1)
     let s:red         = "#d70000"
     let s:magenta     = "#af005f"
     let s:violet      = "#5f5faf"
-    let s:blue        = "#0087ff"
+    let s:blue        = "#0087d7"
     let s:cyan        = "#00afaf"
     let s:green       = "#5f8700"
 elseif &t_Co == 16
@@ -326,7 +326,7 @@ elseif &t_Co == 256
     let s:red         = "160"
     let s:magenta     = "125"
     let s:violet      = "61"
-    let s:blue        = "33"
+    let s:blue        = "32"
     let s:cyan        = "37"
     let s:green       = "64"
 else
