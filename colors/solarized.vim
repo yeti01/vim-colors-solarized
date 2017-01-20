@@ -357,14 +357,10 @@ endif
 " Formatting options and null values for passthrough effect "{{{
 " ---------------------------------------------------------------------
     let s:none            = "NONE"
-    let s:none            = "NONE"
-    let s:t_none          = "NONE"
-    let s:n               = "NONE"
     let s:c               = ",undercurl"
     let s:r               = ",reverse"
     let s:s               = ",standout"
     let s:ou              = ""
-    let s:ob              = ""
 "}}}
 " Background value based on termtrans setting "{{{
 " ---------------------------------------------------------------------
@@ -402,7 +398,6 @@ if g:solarized_contrast == "high"
     let s:base0       = s:base1
     let s:base1       = s:base2
     let s:base2       = s:base3
-    let s:back        = s:back
 endif
 if g:solarized_contrast == "low"
     let s:back        = s:base02
@@ -472,10 +467,8 @@ exe "let s:fg_cyan      = ' ".s:vmode."fg=".s:cyan   ."'"
 
 exe "let s:fmt_none     = ' ".s:vmode."=NONE".          " term=NONE".    "'"
 exe "let s:fmt_bold     = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b."'"
-exe "let s:fmt_bldi     = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b."'"
 exe "let s:fmt_undr     = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u."'"
 exe "let s:fmt_undb     = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
-exe "let s:fmt_undi     = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u."'"
 exe "let s:fmt_uopt     = ' ".s:vmode."=NONE".s:ou.     " term=NONE".s:ou."'"
 exe "let s:fmt_curl     = ' ".s:vmode."=NONE".s:c.      " term=NONE".s:c."'"
 exe "let s:fmt_ital     = ' ".s:vmode."=NONE".          " term=NONE".    "'"
