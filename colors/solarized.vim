@@ -391,7 +391,7 @@ if g:solarized_contrast == "high"
     let s:base01      = s:base00
     let s:base00      = s:base0
     let s:base0       = s:base1
-    let s:base1       = s:base2
+"   let s:base1       = s:base2
     let s:base2       = s:base3
 endif
 if g:solarized_contrast == "low"
