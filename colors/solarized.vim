@@ -631,7 +631,7 @@ exe "hi! DiffDelete"     .s:fmt_none   .s:fg_red    .s:bg_base02
 exe "hi! DiffText"       .s:fmt_none   .s:fg_blue   .s:bg_base02 .s:sp_blue
     endif
 endif
-exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
+exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_none
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! SpellBad"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_red
 exe "hi! SpellCap"       .s:fmt_curl   .s:fg_none   .s:bg_none    .s:sp_violet
@@ -647,8 +647,11 @@ exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base2  .s:bg_base01  .s:sp_base0
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
+if  (&cursorline == 1)
+exe "hi! Cursor"         .s:fmt_none   .s:fg_base02 .s:bg_base0
+else
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
-hi! link lCursor Cursor
+endif
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
 
 "}}}
