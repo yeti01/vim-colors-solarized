@@ -581,25 +581,18 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
 if      (g:solarized_visibility=="high")
-    exe "hi! SpecialKey"     .s:fmt_none   .s:fg_back   .s:bg_red
-    exe "hi! NonText"        .s:fmt_bold   .s:fg_base1  .s:bg_none
+    exe "hi! SpecialKey" .s:fmt_none   .s:fg_back   .s:bg_red
+    exe "hi! NonText"    .s:fmt_bold   .s:fg_base1  .s:bg_none
 elseif  (g:solarized_visibility=="low")
-    exe "hi! SpecialKey"     .s:fmt_bold   .s:fg_base02 .s:bg_none
-    exe "hi! NonText"        .s:fmt_bold   .s:fg_base02 .s:bg_none
+    exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base02 .s:bg_none
+    exe "hi! NonText"    .s:fmt_bold   .s:fg_base02 .s:bg_none
 else
-    exe "hi! SpecialKey"     .s:fmt_bold   .s:fg_red    .s:bg_none
-    exe "hi! NonText"        .s:fmt_bold   .s:fg_base01 .s:bg_none
+    exe "hi! SpecialKey" .s:fmt_bold   .s:fg_red    .s:bg_none
+    exe "hi! NonText"    .s:fmt_bold   .s:fg_base01 .s:bg_none
 endif
-if (has("gui_running")) || &t_Co > 8
-    exe "hi! StatusLine"     .s:fmt_none   .s:fg_base02 .s:bg_base1
-    exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base02 .s:bg_base00
-    "exe "hi! Visual"         .s:fmt_stnd   .s:fg_none   .s:bg_base02
-    exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base01
-else
-    exe "hi! StatusLine"     .s:fmt_none   .s:fg_base02 .s:bg_base2
-    exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base02 .s:bg_base2
-    exe "hi! Visual"         .s:fmt_none   .s:fg_none   .s:bg_base2
-endif
+exe "hi! StatusLine"     .s:fmt_none   .s:fg_base02 .s:bg_base1
+exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base02 .s:bg_base00
+exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base01
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_none   .s:fg_back   .s:bg_red
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
@@ -649,8 +642,8 @@ exe "hi! PmenuSel"       .s:fmt_none   .s:fg_base2  .s:bg_base01
 exe "hi! PmenuSbar"      .s:fmt_none   .s:fg_base0  .s:bg_base2
 exe "hi! PmenuThumb"     .s:fmt_none   .s:fg_base03 .s:bg_base0
 exe "hi! TabLine"        .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base2  .s:bg_base01  .s:sp_base0
 exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
+exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base2  .s:bg_base01  .s:sp_base0
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
