@@ -519,10 +519,11 @@ endif
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 
-exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+exe "hi! Comment"        .s:fmt_ital   .s:fg_blue   .s:bg_none
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
+exe "hi! Constant"       .s:fmt_none   .s:fg_red    .s:bg_none
+exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -530,11 +531,11 @@ exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
-exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! Identifier"     .s:fmt_none   .s:fg_base01 .s:bg_none
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
+exe "hi! Statement"      .s:fmt_bold   .s:fg_magenta.s:bg_none
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -543,20 +544,20 @@ exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
+exe "hi! PreProc"        .s:fmt_none   .s:fg_violet .s:bg_none
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
 "        Macro           same as Define
 "        PreCondit       preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
+exe "hi! Type"           .s:fmt_bold   .s:fg_green  .s:bg_none
 "       *Type            int, long, char, etc.
 "        StorageClass    static, register, volatile, etc.
 "        Structure       struct, union, enum, etc.
 "        Typedef         A typedef
 
-exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
+exe "hi! Special"        .s:fmt_none   .s:fg_violet  .s:bg_none
 "       *Special         any special symbol
 "        SpecialChar     special character in a constant
 "        Tag             you can use CTRL-] on this
@@ -564,16 +565,16 @@ exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
 "        SpecialComment  special things inside a comment
 "        Debug           debugging statements
 
-exe "hi! Underlined"     .s:fmt_none   .s:fg_violet .s:bg_none
+exe "hi! Underlined"     .s:fmt_undr   .s:fg_blue   .s:bg_none
 "       *Underlined      text that stands out, HTML links
 
 exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
+exe "hi! Error"          .s:fmt_bold   .s:fg_orange .s:bg_none
 "       *Error           any erroneous construct
 
-exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
+exe "hi! Todo"           .s:fmt_bold   .s:fg_back   .s:bg_yellow
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
@@ -582,53 +583,54 @@ exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
 " ---------------------------------------------------------------------
 if      (g:solarized_visibility=="high")
     exe "hi! SpecialKey" .s:fmt_none   .s:fg_back   .s:bg_red
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_base1  .s:bg_none
+    exe "hi! NonText"    .s:fmt_bold   .s:fg_red    .s:bg_none
 elseif  (g:solarized_visibility=="low")
     exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base02 .s:bg_none
     exe "hi! NonText"    .s:fmt_bold   .s:fg_base02 .s:bg_none
 else
-    exe "hi! SpecialKey" .s:fmt_bold   .s:fg_red    .s:bg_none
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_base01 .s:bg_none
+    exe "hi! SpecialKey" .s:fmt_none   .s:fg_blue   .s:bg_none
+    exe "hi! NonText"    .s:fmt_bold   .s:fg_blue   .s:bg_none
 endif
-exe "hi! StatusLine"     .s:fmt_none   .s:fg_base02 .s:bg_base1
+exe "hi! StatusLine"     .s:fmt_bold   .s:fg_base02 .s:bg_base1
 exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base02 .s:bg_base00
 exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base01
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_none   .s:fg_back   .s:bg_red
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
-exe "hi! Search"         .s:fmt_none   .s:fg_back   .s:bg_yellow
+exe "hi! Search"         .s:fmt_none   .s:fg_back   .s:bg_orange
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
-exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
-exe "hi! VertSplit"      .s:fmt_bold   .s:fg_base00 .s:bg_base00
-exe "hi! Title"          .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! CursorLineNr"   .s:fmt_bold   .s:fg_base0  .s:bg_base03
+exe "hi! Question"       .s:fmt_bold   .s:fg_green  .s:bg_none
+exe "hi! VertSplit"      .s:fmt_none   .s:fg_base0  .s:bg_base02
+exe "hi! Title"          .s:fmt_bold   .s:fg_blue   .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02
 exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! WildMenu"       .s:fmt_none   .s:fg_base2  .s:bg_base02
-exe "hi! Folded"         .s:fmt_bold   .s:fg_base0  .s:bg_base02  .s:sp_base03
-exe "hi! FoldColumn"     .s:fmt_bold   .s:fg_base0  .s:bg_base02
+exe "hi! Folded"         .s:fmt_bold   .s:fg_base0  .s:bg_base02  .s:sp_base0
+exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0  .s:bg_none
 if      (g:solarized_diffmode=="high")
 exe "hi! DiffAdd"        .s:fmt_none   .s:fg_back   .s:bg_green
-exe "hi! DiffChange"     .s:fmt_none   .s:fg_back   .s:bg_yellow
+exe "hi! DiffChange"     .s:fmt_none   .s:fg_back   .s:bg_blue
 exe "hi! DiffDelete"     .s:fmt_none   .s:fg_back   .s:bg_red
-exe "hi! DiffText"       .s:fmt_none   .s:fg_back   .s:bg_blue
+exe "hi! DiffText"       .s:fmt_none   .s:fg_back   .s:bg_yellow
 elseif  (g:solarized_diffmode=="low")
 exe "hi! DiffAdd"        .s:fmt_undr   .s:fg_green  .s:bg_none   .s:sp_green
-exe "hi! DiffChange"     .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
+exe "hi! DiffChange"     .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
 exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_none
-exe "hi! DiffText"       .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
+exe "hi! DiffText"       .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
 else " normal
     if has("gui_running")
-exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
-exe "hi! DiffChange"     .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
+exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02
+exe "hi! DiffChange"     .s:fmt_bold   .s:fg_blue   .s:bg_base02
 exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
-exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
+exe "hi! DiffText"       .s:fmt_bold   .s:fg_yellow .s:bg_base02
     else
-exe "hi! DiffAdd"        .s:fmt_none   .s:fg_green  .s:bg_base02 .s:sp_green
-exe "hi! DiffChange"     .s:fmt_none   .s:fg_yellow .s:bg_base02 .s:sp_yellow
+exe "hi! DiffAdd"        .s:fmt_none   .s:fg_green  .s:bg_base02
+exe "hi! DiffChange"     .s:fmt_none   .s:fg_blue   .s:bg_base02
 exe "hi! DiffDelete"     .s:fmt_none   .s:fg_red    .s:bg_base02
-exe "hi! DiffText"       .s:fmt_none   .s:fg_blue   .s:bg_base02 .s:sp_blue
+exe "hi! DiffText"       .s:fmt_none   .s:fg_yellow .s:bg_base02
     endif
 endif
 exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0  .s:bg_none
@@ -643,7 +645,7 @@ exe "hi! PmenuSbar"      .s:fmt_none   .s:fg_base0  .s:bg_base2
 exe "hi! PmenuThumb"     .s:fmt_none   .s:fg_base03 .s:bg_base0
 exe "hi! TabLine"        .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
 exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base2  .s:bg_base01  .s:sp_base0
+exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base2  .s:bg_base01  .s:sp_base2
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
